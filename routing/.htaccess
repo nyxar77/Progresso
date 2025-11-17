@@ -1,6 +1,0 @@
-RewriteEngine On
-# If file/folder exists, serve it
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-# Otherwise, fallback to index.html
-RewriteRule ^ index.html [L]
