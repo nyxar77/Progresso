@@ -1,0 +1,41 @@
+.error-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.error-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  border: 3px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 var(--border);
+  background-color: var(--bg);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.error-title {
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  margin: 0 0 16px 0;
+}
+
+.error-subtitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+
+.error-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 32px 0;
+}

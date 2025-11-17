@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    /* base options */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2023",
+    // "resolveJsonModule": true,
+    // "moduleResolution": "nodenext",
+    "module": "ESNext",
+    "moduleDetection": "auto",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    // "moduleResolution": "nodenext",
+    // "module": "nodenext",
+    "lib": [
+      "ES2024",
+      "DOM",
+      "DOM.Iterable"
+    ]
+  }
+}

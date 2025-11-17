@@ -1,0 +1,65 @@
+[
+  {
+    "question": "What is the capital of France?",
+    "options": [
+      {
+        "label": "Berlin",
+        "isCorrect": false
+      },
+      {
+        "label": "Madrid",
+        "isCorrect": false
+      },
+      {
+        "label": "Paris",
+        "isCorrect": true
+      },
+      {
+        "label": "Rome",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Which number is prime?",
+    "options": [
+      {
+        "label": "4",
+        "isCorrect": false
+      },
+      {
+        "label": "9",
+        "isCorrect": false
+      },
+      {
+        "label": "7",
+        "isCorrect": true
+      },
+      {
+        "label": "12",
+        "isCorrect": false
+      }
+    ]
+  },
+  {
+    "question": "Which language is used for web styling?",
+    "options": [
+      {
+        "label": "Python",
+        "isCorrect": false
+      },
+      {
+        "label": "CSS",
+        "isCorrect": true
+      },
+      {
+        "label": "Java",
+        "isCorrect": false
+      },
+      {
+        "label": "C++",
+        "isCorrect": false
+      }
+    ]
+  }
+]
