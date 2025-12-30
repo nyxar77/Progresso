@@ -1,9 +1,7 @@
 node_modules
 .git
+.direnv
 .gitignore
 .vscode
 *.log
 *.tmp
-.direnv/
-*.zip
-

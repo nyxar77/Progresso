@@ -1,0 +1,93 @@
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 22px;
+  background: var(--bg);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+}
+
+.auth-card h1 {
+  margin: 0 0 18px;
+  font-size: 1.7rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* each field is vertically stacked */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.field input {
+  width: 100%;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 11px 13px;
+  border-radius: 12px;
+  outline: none;
+  transition:
+    border var(--trans-fast),
+    box-shadow var(--trans-fast),
+    background var(--trans-fast);
+}
+
+.field input::placeholder {
+  opacity: 0.6;
+}
+
+.field input:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 25%, transparent);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+}
+
+.auth-form button {
+  margin-top: 6px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--selected-text);
+  padding: 13px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  transition:
+    background var(--trans-fast),
+    box-shadow var(--trans-fast),
+    transform var(--trans-fast);
+}
+
+.auth-form button:hover {
+  background: var(--accent-hover);
+  box-shadow: 3px 3px 0 var(--text);
+  transform: translateY(-1px);
+}
+
+.auth-meta {
+  margin-top: 4px;
+  text-align: right;
+  font-size: 0.85rem;
+}
+
+.auth-meta a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.auth-meta a:hover {
+  text-decoration: underline;
+}

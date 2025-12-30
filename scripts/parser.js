@@ -11,7 +11,9 @@
   }
 })(); */
 export function init() {
-    document.getElementById("quizFile")?.addEventListener("change", async function () {
+    document
+        .getElementById("quizFile")
+        ?.addEventListener("change", async function () {
         if (!(this instanceof HTMLInputElement)) {
             return;
         }
@@ -27,7 +29,9 @@ export function init() {
         catch (error) {
             let container = document.querySelector("#container");
             container.style.color = "var(--incorrect)";
-            container.innerText = "the file is not of type json";
+            container.innerText =
+                "the file either is not of type 'json' or isn't in the correct format";
+            console.warn(error);
         }
     });
     function readQuizFile(file) {
@@ -63,7 +67,7 @@ export function init() {
             quizContainer.classList.add("quiz-container");
             quizContainer.addEventListener("click", function () {
                 const allContainers = document.querySelectorAll(".quiz-container");
-                allContainers.forEach(c => c.classList.remove("active"));
+                allContainers.forEach((c) => c.classList.remove("active"));
                 this.classList.add("active");
             });
             //NOTE: Questions
@@ -73,7 +77,7 @@ export function init() {
             //NOTE : options
             let quizOptions = document.createElement("div");
             quizOptions.classList.add("quiz-options");
-            element.options.forEach(option => {
+            element.options.forEach((option) => {
                 let quizOption = document.createElement("div");
                 quizOption.classList.add("quiz-option");
                 quizOption.setAttribute("selected", "false");
@@ -118,7 +122,7 @@ export function init() {
     }
     function validateQuiz() {
         const allContainers = document.querySelectorAll(".quiz-container");
-        allContainers.forEach(c => c.classList.remove("active"));
+        allContainers.forEach((c) => c.classList.remove("active"));
     }
     function unloadQuiz() {
         document.querySelector("container").innerHTML = "";

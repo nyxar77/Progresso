@@ -1,0 +1,51 @@
+<template id="dashboard-template" styling="dashboard">
+  <main class="dashboard-main">
+
+    <h1 class="dashboard-header">Welcome back!</h1>
+    <p class="dashboard-subheader">Here's a summary of your progress so far.</p>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-card-value">12</div>
+        <div class="stat-card-label">Quizzes Completed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-value">82%</div>
+        <div class="stat-card-label">Average Score</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card-value">3</div>
+        <div class="stat-card-label">Quizzes Created</div>
+      </div>
+    </div>
+
+    <h2 class="dashboard-section-title">My Quizzes</h2>
+    <ul class="quiz-list">
+      <li>
+        <a onclick="redirect('/quizzes/1')" class="quiz-list-item">
+          <span class="quiz-list-title">Capital Cities Quiz</span>
+          <span class="quiz-list-status completed">Score: 8/10</span>
+        </a>
+      </li>
+      <li>
+        <a onclick="redirect('/quizzes/2')" class="quiz-list-item">
+          <span class="quiz-list-title">Basic JavaScript Functions</span>
+          <span class="quiz-list-status">Not Started</span>
+        </a>
+      </li>
+      <li>
+        <a onclick="redirect('/quizzes/3')" class="quiz-list-item">
+          <span class="quiz-list-title">Prime Numbers</span>
+          <span class="quiz-list-status completed">Score: 10/10</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="cta-section">
+      <a onclick="redirect('/create')" class="btn-primary">
+        Create New Quiz
+      </a>
+    </div>
+
+  </main>
+</template>

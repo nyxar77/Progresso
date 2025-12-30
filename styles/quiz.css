@@ -122,7 +122,6 @@
   transform: translate(5px, 5px);
 }
 
-
 #quizFile {
   display: none;
 }
@@ -160,7 +159,6 @@
 
 .quiz-file-label:hover {
   box-shadow: 2px 2px 0 var(--text);
-}
 }
 
 .quiz-container:last-of-type {
@@ -266,7 +264,6 @@
   transform: translate(5px, 5px);
 }
 
-
 #quizFile {
   display: none;
 }
@@ -304,4 +301,117 @@
 
 .quiz-file-label:hover {
   box-shadow: 2px 2px 0 var(--text);
+}
+
+/* NOTE: new styles */
+
+.quiz-card-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+}
+
+/* EACH QUIZ = ITS OWN BLOCK WITH A BORDER */
+.quiz-card {
+  position: relative;
+  border: 4px solid var(--border) !important;
+  border-radius: 18px;
+  background: var(--bg);
+  padding: 28px 22px 78px;
+  box-shadow: 7px 7px 0 var(--border) !important;
+  transition: var(--trans-fast);
+}
+
+.quiz-card:hover {
+  box-shadow: 4px 4px 0 var(--border) !important;
+  transform: translate(2px, 2px);
+}
+
+/* TITLE */
+.quiz-card-title {
+  margin: 0 0 10px 0;
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--text);
+}
+
+/* DESCRIPTION REVEAL */
+.quiz-card-desc {
+  opacity: 0.85;
+  line-height: 1.45;
+  margin-top: 6px;
+}
+
+/* DELETE BUTTON — TOP RIGHT */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: 3px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  background: var(--bg);
+  color: var(--incorrect);
+  font-weight: 900;
+  box-shadow: 3px 3px 0 var(--border);
+  cursor: pointer;
+}
+
+/* BUTTON BAR — BOTTOM */
+.quiz-card-actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 18px 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.quiz-card-actions .icon,
+.close-btn {
+  transition: var(--trans-fast);
+}
+
+.quiz-card-actions .icon,
+.close-btn {
+  font-size: 1.1rem;
+  font-weight: 800;
+  border: 3px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--text);
+  padding: 12px 18px;
+  box-shadow: 4px 4px 0 var(--border);
+  cursor: pointer;
+}
+
+.quiz-card-actions .icon:hover,
+.close-btn:hover {
+  background: var(--accent);
+  color: var(--selected-text);
+  box-shadow: 2px 2px 0 var(--border);
+  transform: translate(2px, 2px);
+}
+
+/* PRIMARY = ACCENT BY DEFAULT */
+.quiz-card-actions .primary {
+  background: var(--accent);
+  color: var(--selected-text);
+}
+
+.quiz-card-actions .primary:hover {
+  background: var(--accent-hover);
+}
+
+/* DANGER = RED SIGNAL */
+.danger {
+  color: var(--incorrect);
+}
+
+.danger:hover {
+  background: var(--incorrect);
+  color: var(--selected-text);
 }

@@ -1,0 +1,54 @@
+.dashboard-main {
+  width: 100%;
+  max-width: 900px;
+  /* Wider than 404, good for a dashboard */
+  margin: 0 auto;
+  padding: 40px 24px;
+  box-sizing: border-box;
+}
+
+.dashboard-header {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+}
+
+.dashboard-subheader {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin: 0 0 32px 0;
+  opacity: 0.8;
+}
+
+/* --- 1. Stat Cards --- */
+.stat-grid {
+  display: grid;
+  /* Responsive grid: stacks on mobile, columns on desktop */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.stat-card {
+  /* Using the main "Progresso" style! */
+  background-color: var(--bg);
+  border: 3px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 var(--border);
+  padding: 24px;
+  transition: var(--trans-fast);
+}
+
+.stat-card-value {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 0 0 8px 0;
+  line-height: 1;
+}
+
+.stat-card-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}

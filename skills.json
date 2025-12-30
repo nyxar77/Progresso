@@ -1,0 +1,12 @@
+{
+  "2025-11-01": {
+    "french": true,
+    "javascript": true,
+    "guitar": false
+  },
+  "2025-10-31": {
+    "french": true,
+    "javascript": false,
+    "guitar": true
+  }
+}
