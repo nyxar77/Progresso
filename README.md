@@ -1,6 +1,6 @@
 progresso
 
-this is a hobby project, the goal? building everything from scratch, eliminating the use of npm
+this is a hobby project, the goal? building everything from scratch, eliminating the use of npm as much as possible
 
 TODO:
 SPA implementation
