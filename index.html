@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/navbar.css" />
     <script src="scripts/app.js" defer></script>
     <script type="module" src="routing/paths.js" defer></script>
+    <base href="/" />
     <script>
       (function () {
         try {
@@ -33,7 +34,9 @@
   <body>
     <nav id="main-nav">
       <div class="nav-container">
-        <a onclick="redirect('/home')" id="nav-logo">Progresso</a>
+        <a onclick="redirect('/home')" id="nav-logo" style="cursor: pointer"
+          >Progresso</a
+        >
 
         <ul class="nav-links">
           <li>

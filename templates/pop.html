@@ -1,0 +1,88 @@
+<template scripting="pop" styling="pop">
+  <a
+    id="openModal"
+    style="color: var(--accent); font-weight: 700; cursor: pointer"
+    >Upload File</a
+  >
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+
+      <h2>Upload your file</h2>
+
+      <div class="file-upload-wrapper">
+        <input type="file" id="fileInput" />
+      </div>
+
+      <!-- New Inputs for Title and Description -->
+      <div class="form-group">
+        <label for="quizTitle" style="color: var(--text); font-weight: 600"
+          >Quiz Title</label
+        >
+        <input
+          type="text"
+          id="quizTitle"
+          placeholder="Enter the title of the quiz"
+          style="
+            padding: 10px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            width: 100%;
+            background-color: var(--bg);
+            color: var(--text);
+          "
+        />
+      </div>
+
+      <div class="form-group">
+        <label
+          for="quizDescription"
+          style="color: var(--text); font-weight: 600"
+          >Quiz Description</label
+        >
+        <textarea
+          id="quizDescription"
+          placeholder="Enter a brief description of the quiz"
+          style="
+            padding: 10px;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            width: 100%;
+            background-color: var(--bg);
+            color: var(--text);
+          "
+          rows="4"
+        ></textarea>
+      </div>
+
+      <button id="uploadBtn" class="btn-primary">Upload</button>
+
+      <div id="uploadStatus"></div>
+    </div>
+  </div>
+</template>
+
+<!-- <template scripting="pop" styling="pop">
+  <a
+    id="openModal"
+    style="color: var(--accent); font-weight: 700; cursor: pointer"
+    >Upload File</a
+  >
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+
+      <h2>Upload your file</h2>
+
+      <div class="file-upload-wrapper">
+        <input type="file" id="fileInput" />
+      </div>
+
+      <button id="uploadBtn" class="btn-primary">Upload</button>
+
+      <div id="uploadStatus"></div>
+    </div>
+  </div>
+</template> -->

@@ -1,6 +1,6 @@
-<template scripting="login" styling="login">
+<template scripting="signup" styling="login">
   <div class="auth-card">
-    <h1>Login</h1>
+    <h1>signup</h1>
 
     <form class="auth-form" novalidate>
       <div class="field">
@@ -13,12 +13,11 @@
         <input id="password" type="password" placeholder="••••••••" required />
       </div>
 
-      <button type="submit">Sign in</button>
+      <button type="submit">Sign up</button>
 
       <p class="auth-meta">
-        <a href="#" style="cursor: pointer">Forgot password?</a>
-        <a onclick="redirect('/signup')" style="cursor: pointer"
-          >create an Account</a
+        <a onclick="redirect('/login')" style="cursor: pointer"
+          >you already have one?</a
         >
       </p>
       <p id="status-form"></p>

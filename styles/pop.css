@@ -1,0 +1,158 @@
+/* --- Modal Background (Backdrop) --- */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* Dimmed background */
+  backdrop-filter: blur(2px); /* Optional: nice blur effect */
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* --- Modal Content Box (Matches your .stat-card style) --- */
+.modal-content {
+  background-color: var(--bg);
+  border: 3px solid var(--border);
+  border-radius: 10px;
+  /* Hard shadow matches your theme */
+  box-shadow: 6px 6px 0 var(--border);
+  padding: 32px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  color: var(--text);
+  animation: slideUp 0.2s ease-out;
+}
+
+/* --- Typography --- */
+.modal h2 {
+  margin-top: 0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+/* --- Close Button (X) --- */
+.close {
+  color: var(--border);
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.1s;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--incorrect); /* Red color on hover for "close" action */
+  text-decoration: none;
+}
+
+/* --- Form Elements Styled to Theme --- */
+.file-upload-wrapper {
+  margin-bottom: 24px;
+}
+
+/* Custom styling for the file input to match the brute style */
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  background: var(--bg);
+  border: 2px dashed var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Main Action Button */
+.btn-primary {
+  background-color: var(--accent);
+  color: #000; /* Accent is usually bright, so black text often reads best, or use var(--bg) if preferred */
+  border: 3px solid var(--border);
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--border);
+  border-radius: 8px;
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--border);
+}
+
+.btn-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--border);
+}
+
+#uploadStatus {
+  margin-top: 16px;
+  font-weight: 600;
+  min-height: 1.2em;
+}
+
+/* Styling for the new form inputs */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-group input,
+.form-group textarea {
+  font-size: 1rem;
+  padding: 12px;
+  border-radius: 6px;
+  width: 100%;
+  background-color: var(--bg);
+  color: var(--text);
+  border: 2px solid var(--border);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

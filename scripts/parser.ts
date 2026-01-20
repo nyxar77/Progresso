@@ -11,6 +11,7 @@
   }
 })(); */
 
+import { Router } from "../routing/router.js";
 interface QuizOption {
   label: string;
   isCorrect: boolean;
@@ -23,19 +24,29 @@ interface QuizQuestion {
 
 type Quiz = QuizQuestion[];
 
-export function init() {
+(async () => {
   document
-    .getElementById("quizFile")
-    ?.addEventListener("change", async function () {
-      if (!(this instanceof HTMLInputElement)) {
+    .getElementById("quizFile1")
+    ?.append(await Router.loadTemplates("pop"));
+})();
+
+export function init(position: number) {
+  document
+    .querySelector<HTMLInputElement>(".startQuiz")
+    ?.addEventListener("click", async function () {
+      /* if (!(this instanceof HTMLInputElement)) {
         return;
-      }
-      let file = this.files?.[0];
-      if (file === undefined) throw Error("no file was seleted!");
-      let result = await readQuizFile(file);
+      } */
+      console.log(this);
+
+      /* let file = this.files?.[0];
+      if (file === undefined) throw Error("no file was seleted!"); */
+      let file = JSON.parse(localStorage.getItem("quizzes") || "[]");
+      // let result = await readQuizFile(file.fileContent);
       let data: Quiz;
       try {
-        data = JSON.parse(result);
+        console.log(file[position].fileContent);
+        data = JSON.parse(file[position].fileContent);
         mkQuiz(data);
       } catch (error) {
         let container = document.querySelector<HTMLDivElement>("#container");
@@ -119,12 +130,7 @@ export function init() {
       quizFeedback.classList.add("quiz-feedback");
       quizFeedback.innerText = "yoo this is a feedback" + index;
 
-      quizContainer.append(
-        quizQuestion,
-        quizQuestion,
-        quizOptions,
-        quizFeedback,
-      );
+      quizContainer.append(quizQuestion, quizOptions, quizFeedback);
 
       container.append(quizContainer);
     });
@@ -157,4 +163,76 @@ export function init() {
   function unloadQuiz() {
     document.querySelector<HTMLDivElement>("container")!.innerHTML = "";
   }
+}
+
+loadQuizCards();
+function loadQuizCards() {
+  const quizCards = document.querySelector<HTMLDivElement>(".quiz-cards");
+  const quizzes = JSON.parse(localStorage.getItem("quizzes") || "[]");
+
+  interface quizFormat {
+    quizId: string;
+    quizTitle: string;
+    quizDescription: string;
+    fileName: string;
+    fileContent: Object | string;
+    dateUploaded: string;
+  }
+
+  quizzes.forEach((element: quizFormat, index: number) => {
+    const quizCardGrid = document.createElement("div");
+    quizCardGrid.setAttribute("data-id", element.quizId);
+    quizCardGrid.classList.add("quiz-card-grid");
+
+    const quizCard = document.createElement("div");
+    quizCard.classList.add("quiz-card");
+
+    const quizCardTitle = document.createElement("div");
+    quizCardTitle.classList.add("quiz-card-title");
+    quizCardTitle.textContent = element.quizTitle;
+
+    const quizCardDesc = document.createElement("p");
+    quizCardDesc.classList.add("quiz-card-desc");
+    quizCardDesc.textContent = element.quizDescription;
+
+    const closeBtn = document.createElement("button");
+    closeBtn.classList.add("icon");
+    closeBtn.classList.add("danger");
+    closeBtn.classList.add("close-btn");
+    closeBtn.textContent = "✕";
+    closeBtn.onclick = function () {
+      let elem = this as HTMLButtonElement;
+      let parent = elem.parentElement?.parentElement;
+      if (parent) parent.remove();
+
+      let data = JSON.parse(localStorage.getItem("quizzes") || "[]");
+      data = data.filter(
+        (item: quizFormat) =>
+          item.quizId !== quizCardGrid.getAttribute("data-id"),
+      );
+      localStorage.setItem("quizzes", JSON.stringify(data));
+      console.log("matched");
+    };
+
+    const quizCardActions = document.createElement("div");
+    quizCardActions.classList.add("quiz-card-actions");
+
+    const startBtn = document.createElement("button");
+    startBtn.classList.add("icon");
+    startBtn.classList.add("startQuiz");
+    startBtn.textContent = "▶ Start";
+    startBtn.onclick = function () {
+      init(index);
+    };
+    const statsBtn = document.createElement("button");
+    statsBtn.classList.add("icon");
+    statsBtn.classList.add("primary");
+    statsBtn.textContent = "📊 Stats";
+
+    quizCardActions.append(startBtn, statsBtn);
+    quizCard.append(closeBtn, quizCardTitle, quizCardDesc, quizCardActions);
+    quizCardGrid.append(quizCard);
+    console.log(quizCards);
+    quizCards?.append(quizCardGrid);
+  });
 }

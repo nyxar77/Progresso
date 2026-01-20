@@ -1,12 +1,21 @@
 import { Router } from "./router.js";
-let r1 = new Router("#app");
-r1.register("", () => r1.loadTemplates("dashboard"));
+let r1 = new Router("#app", {
+    "/home": () => Router.loadTemplates("home"),
+    "/about": () => Router.loadTemplates("about"),
+    "/quizzes": () => Router.loadTemplates("quizzes"),
+    "/login": () => Router.loadTemplates("login"),
+    "/signup": () => Router.loadTemplates("signup"),
+    "/dashboard": () => Router.loadTemplates("dashboard"),
+    // "/pop": () => Router.loadTemplates("pop"),
+    "/notfound": () => Router.loadTemplates("notfound"),
+});
+/* r1.register("", () => r1.loadTemplates("dashboard"));
 r1.register("/home", () => r1.loadTemplates("home"));
 r1.register("/about", () => r1.loadTemplates("about"));
 r1.register("/quizzes", () => r1.loadTemplates("quizzes"));
 r1.register("/login", () => r1.loadTemplates("login"));
 r1.register("/dashboard", () => r1.loadTemplates("dashboard"));
-r1.register("/notfound", () => r1.loadTemplates("notfound"));
+r1.register("/notfound", () => r1.loadTemplates("notfound")); */
 window.redirect = function (path) {
     r1.navigate(path);
 };
